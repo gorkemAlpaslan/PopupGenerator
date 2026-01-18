@@ -314,13 +314,13 @@ export function PopupRenderer({ config, isVisible, onClose, onButtonClick, previ
   if (config.type === 'slide-in') {
     return createPortal(
       <div
-        className="fixed right-0 top-0 bottom-0 z-[9999] w-full max-w-sm shadow-2xl"
+        className="fixed right-4 bottom-4 z-[9999] w-full max-w-sm shadow-2xl overflow-hidden animate-in slide-in-from-right-10 duration-500 fade-in"
         style={{
           backgroundColor: config.style.backgroundColor,
-          borderRadius: `${config.style.borderRadius}px 0 0 ${config.style.borderRadius}px`,
+          borderRadius: `${config.style.borderRadius}px`,
         }}
       >
-        <div className="flex h-full flex-col">
+        <div className="flex flex-col">
           {popupContent}
         </div>
       </div>,

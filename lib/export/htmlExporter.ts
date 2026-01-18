@@ -152,9 +152,15 @@ export function generateHTMLCode(config: PopupConfig): string {
         </div>
       </div>
     </div>` : config.type === 'slide-in' ? `
-    <div id="popup-overlay" class="popup-overlay" style="display: none; position: fixed; right: 0; top: 0; bottom: 0; z-index: 9999; width: 100%; max-width: 24rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); background-color: ${config.style.backgroundColor}; color: ${config.style.textColor}; border-radius: ${config.style.borderRadius}px 0 0 ${config.style.borderRadius}px;">
-      <div style="display: flex; height: 100%; flex-direction: column; position: relative;">
-        ${config.content.imageUrl ? `<img src="${config.content.imageUrl}" alt="${config.content.title}" style="width: 100%; height: 12rem; object-fit: cover; border-radius: ${config.style.borderRadius}px 0 0 0;">` : ''}
+    <div id="popup-overlay" class="popup-overlay" style="display: none; position: fixed; right: 1rem; bottom: 1rem; z-index: 9999; width: 100%; max-width: 24rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); background-color: ${config.style.backgroundColor}; color: ${config.style.textColor}; border-radius: ${config.style.borderRadius}px; overflow: hidden; animation: slideIn 0.5s ease-out forwards;">
+      <style>
+        @keyframes slideIn {
+          from { transform: translateX(100%); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+      </style>
+      <div style="display: flex; flex-direction: column; position: relative;">
+        ${config.content.imageUrl ? `<img src="${config.content.imageUrl}" alt="${config.content.title}" style="width: 100%; height: 12rem; object-fit: cover; border-radius: ${config.style.borderRadius}px ${config.style.borderRadius}px 0 0;">` : ''}
         <div style="padding: 1.5rem;">
           <h2 style="margin-bottom: 0.5rem; font-size: 1.5rem; font-weight: 700;">${config.content.title}</h2>
           ${config.content.description ? `<p style="margin-bottom: 1rem; font-size: 0.875rem;">${config.content.description}</p>` : ''}

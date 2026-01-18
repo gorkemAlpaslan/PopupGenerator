@@ -65,26 +65,24 @@ export function ExportPanel() {
   }
 
   return (
-    <div className="flex h-full flex-col glass rounded-2xl overflow-hidden">
-      <div className="mb-4 flex items-center justify-between border-b border-white/20 bg-white/5 p-4">
-        <h2 className="text-2xl font-bold text-white">
+    <div className="flex flex-col h-full lg:h-full glass rounded-2xl overflow-hidden">
+      <div className="flex-none p-4 border-b border-white/20 bg-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <h2 className="text-xl md:text-2xl font-bold text-white">
           Export Code
         </h2>
-        <div className="flex gap-3">
+        <div className="flex gap-3 w-full sm:w-auto">
           <button
             type="button"
             onClick={handleCopy}
-            className="flex items-center gap-2 px-6 py-2 bg-gradient-primary text-white rounded-lg font-semibold transition-all hover:scale-105 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
-            aria-label="Copy code to clipboard"
+            className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-2 bg-gradient-primary text-white text-sm rounded-lg font-semibold transition-all hover:scale-105 shadow-lg"
           >
             <Copy className="h-4 w-4" />
-            {copied ? 'Copied!' : 'Copy'}
+            {copied ? 'Copied' : 'Copy'}
           </button>
           <button
             type="button"
             onClick={handleDownload}
-            className="flex items-center gap-2 px-6 py-2 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold border border-white/30 hover:bg-white/20 transition-all focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2"
-            aria-label="Download code file"
+            className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md text-white text-sm rounded-lg font-semibold border border-white/30 hover:bg-white/20 transition-all"
           >
             <Download className="h-4 w-4" />
             Download
@@ -92,49 +90,49 @@ export function ExportPanel() {
         </div>
       </div>
 
-      <div className="mb-4 flex gap-2 border-b border-white/20 bg-white/5 p-2">
+      <div className="flex-none p-2 border-b border-white/20 bg-white/5 flex gap-2 overflow-x-auto">
         <button
           type="button"
           onClick={() => setActiveFormat('react')}
-          className={`px-6 py-3 text-sm font-semibold rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 ${
+          className={`flex-1 sm:flex-none px-4 py-2 text-sm font-semibold rounded-lg transition-all whitespace-nowrap ${
             activeFormat === 'react'
               ? 'bg-gradient-primary text-white shadow-lg'
               : 'text-white/70 hover:text-white hover:bg-white/10'
           }`}
-          aria-selected={activeFormat === 'react'}
-          role="tab"
         >
           React Component
         </button>
         <button
           type="button"
           onClick={() => setActiveFormat('html')}
-          className={`px-6 py-3 text-sm font-semibold rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 ${
+          className={`flex-1 sm:flex-none px-4 py-2 text-sm font-semibold rounded-lg transition-all whitespace-nowrap ${
             activeFormat === 'html'
               ? 'bg-gradient-primary text-white shadow-lg'
               : 'text-white/70 hover:text-white hover:bg-white/10'
           }`}
-          aria-selected={activeFormat === 'html'}
-          role="tab"
         >
           HTML/CSS/JS
         </button>
       </div>
 
-      <div className="flex-1 overflow-auto rounded-lg m-4 border border-white/10 bg-gray-900/50">
-        <SyntaxHighlighter
-          language={activeFormat === 'react' ? 'tsx' : 'html'}
-          style={vscDarkPlus}
-          customStyle={{
-            margin: 0,
-            borderRadius: '0.5rem',
-            fontSize: '0.875rem',
-            lineHeight: '1.5',
-            background: 'transparent',
-          }}
-        >
-          {code}
-        </SyntaxHighlighter>
+      <div className="flex-1 min-h-0 overflow-hidden relative group">
+        <div className="absolute inset-0 m-4 rounded-lg bg-[#1e1e1e] border border-white/10 overflow-auto custom-scrollbar">
+          <SyntaxHighlighter
+            language={activeFormat === 'react' ? 'tsx' : 'html'}
+            style={vscDarkPlus}
+            customStyle={{
+              margin: 0,
+              padding: '1.5rem',
+              borderRadius: '0.5rem',
+              fontSize: '0.875rem',
+              lineHeight: '1.5',
+              background: 'transparent',
+              minWidth: '100%',
+            }}
+          >
+            {code}
+          </SyntaxHighlighter>
+        </div>
       </div>
     </div>
   );
