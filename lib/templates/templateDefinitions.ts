@@ -1,0 +1,445 @@
+import type { PopupConfig } from '@/types';
+
+export const templates: PopupConfig[] = [
+  // Modal Type Templates (8)
+  {
+    id: 'newsletter-signup',
+    name: 'Newsletter Signup',
+    type: 'modal',
+    content: {
+      title: 'Subscribe to Our Newsletter',
+      description: 'Get the latest updates and exclusive offers delivered to your inbox.',
+      buttonText: 'Subscribe',
+      inputPlaceholder: 'Enter your email',
+    },
+    style: {
+      backgroundColor: '#ffffff',
+      textColor: '#1f2937',
+      buttonColor: '#3b82f6',
+      borderRadius: 12,
+      overlayOpacity: 0.5,
+    },
+    triggers: {
+      delay: 3,
+      delayEnabled: true,
+      scrollPercent: 50,
+      scrollEnabled: true,
+      exitIntent: false,
+    },
+    settings: {
+      frequency: 'always',
+    },
+  },
+  {
+    id: 'discount-offer',
+    name: 'Discount Offer',
+    type: 'modal',
+    content: {
+      title: 'Special Offer!',
+      description: 'Get 20% off your first order. Use code: SAVE20',
+      buttonText: 'Claim Offer',
+      imageUrl: 'https://via.placeholder.com/300x200?text=Discount',
+    },
+    style: {
+      backgroundColor: '#fef3c7',
+      textColor: '#92400e',
+      buttonColor: '#f59e0b',
+      borderRadius: 16,
+      overlayOpacity: 0.6,
+    },
+    triggers: {
+      delay: 5,
+      delayEnabled: true,
+      scrollPercent: 30,
+      scrollEnabled: true,
+      exitIntent: true,
+    },
+    settings: {
+      frequency: 'always',
+    },
+  },
+  {
+    id: 'exit-intent',
+    name: 'Exit Intent',
+    type: 'modal',
+    content: {
+      title: "Wait! Don't Go Yet",
+      description: 'Get 15% off your first purchase when you subscribe.',
+      buttonText: 'Get Discount',
+    },
+    style: {
+      backgroundColor: '#ffffff',
+      textColor: '#111827',
+      buttonColor: '#10b981',
+      borderRadius: 8,
+      overlayOpacity: 0.7,
+    },
+    triggers: {
+      delay: 0,
+      delayEnabled: false,
+      scrollPercent: 0,
+      scrollEnabled: false,
+      exitIntent: true,
+    },
+    settings: {
+      frequency: 'always',
+    },
+  },
+  {
+    id: 'welcome-message',
+    name: 'Welcome Message',
+    type: 'modal',
+    content: {
+      title: 'Welcome to Our Site!',
+      description: 'Thanks for visiting. Explore our amazing products and services.',
+      buttonText: 'Get Started',
+    },
+    style: {
+      backgroundColor: '#eff6ff',
+      textColor: '#1e40af',
+      buttonColor: '#2563eb',
+      borderRadius: 12,
+      overlayOpacity: 0.4,
+    },
+    triggers: {
+      delay: 2,
+      delayEnabled: true,
+      scrollPercent: 0,
+      scrollEnabled: false,
+      exitIntent: false,
+    },
+    settings: {
+      frequency: 'always',
+    },
+  },
+  {
+    id: 'product-announcement',
+    name: 'Product Announcement',
+    type: 'modal',
+    content: {
+      title: 'New Product Launch!',
+      description: 'Check out our latest innovation. Limited time only!',
+      buttonText: 'Learn More',
+      imageUrl: 'https://via.placeholder.com/400x300?text=New+Product',
+    },
+    style: {
+      backgroundColor: '#ffffff',
+      textColor: '#1f2937',
+      buttonColor: '#8b5cf6',
+      borderRadius: 20,
+      overlayOpacity: 0.5,
+    },
+    triggers: {
+      delay: 4,
+      delayEnabled: true,
+      scrollPercent: 25,
+      scrollEnabled: true,
+      exitIntent: false,
+    },
+    settings: {
+      frequency: 'always',
+    },
+  },
+  {
+    id: 'social-media-follow',
+    name: 'Social Media Follow',
+    type: 'modal',
+    content: {
+      title: 'Follow Us on Social Media',
+      description: 'Stay connected and get the latest updates on our social channels.',
+      buttonText: 'Follow Now',
+    },
+    style: {
+      backgroundColor: '#1f2937',
+      textColor: '#f9fafb',
+      buttonColor: '#6366f1',
+      borderRadius: 12,
+      overlayOpacity: 0.6,
+    },
+    triggers: {
+      delay: 6,
+      delayEnabled: true,
+      scrollPercent: 40,
+      scrollEnabled: true,
+      exitIntent: false,
+    },
+    settings: {
+      frequency: 'always',
+    },
+  },
+  {
+    id: 'age-verification',
+    name: 'Age Verification',
+    type: 'modal',
+    content: {
+      title: 'Age Verification Required',
+      description: 'You must be 18 or older to access this content.',
+      buttonText: 'I am 18+',
+    },
+    style: {
+      backgroundColor: '#ffffff',
+      textColor: '#1f2937',
+      buttonColor: '#dc2626',
+      borderRadius: 8,
+      overlayOpacity: 0.9,
+    },
+    triggers: {
+      delay: 0,
+      delayEnabled: false,
+      scrollPercent: 0,
+      scrollEnabled: false,
+      exitIntent: false,
+    },
+    settings: {
+      frequency: 'always',
+    },
+  },
+  {
+    id: 'free-trial',
+    name: 'Free Trial',
+    type: 'modal',
+    content: {
+      title: 'Start Your Free Trial',
+      description: 'Get 14 days free access to all premium features. No credit card required.',
+      buttonText: 'Start Free Trial',
+    },
+    style: {
+      backgroundColor: '#f0fdf4',
+      textColor: '#166534',
+      buttonColor: '#22c55e',
+      borderRadius: 16,
+      overlayOpacity: 0.5,
+    },
+    triggers: {
+      delay: 8,
+      delayEnabled: true,
+      scrollPercent: 60,
+      scrollEnabled: true,
+      exitIntent: false,
+    },
+    settings: {
+      frequency: 'always',
+    },
+  },
+  // Banner Type Templates (4)
+  {
+    id: 'cookie-consent',
+    name: 'Cookie Consent',
+    type: 'banner',
+    content: {
+      title: 'We use cookies',
+      description: 'This website uses cookies to ensure you get the best experience on our website.',
+      buttonText: 'Accept',
+    },
+    style: {
+      backgroundColor: '#1f2937',
+      textColor: '#f9fafb',
+      buttonColor: '#3b82f6',
+      borderRadius: 0,
+      overlayOpacity: 0,
+    },
+    triggers: {
+      delay: 1,
+      delayEnabled: true,
+      scrollPercent: 0,
+      scrollEnabled: false,
+      exitIntent: false,
+    },
+    settings: {
+      frequency: 'always',
+    },
+  },
+  {
+    id: 'sale-announcement',
+    name: 'Sale Announcement',
+    type: 'banner',
+    content: {
+      title: '🎉 Big Sale! Up to 50% Off',
+      description: "Limited time offer. Shop now before it's too late!",
+      buttonText: 'Shop Now',
+    },
+    style: {
+      backgroundColor: '#dc2626',
+      textColor: '#ffffff',
+      buttonColor: '#fbbf24',
+      borderRadius: 0,
+      overlayOpacity: 0,
+    },
+    triggers: {
+      delay: 2,
+      delayEnabled: true,
+      scrollPercent: 10,
+      scrollEnabled: true,
+      exitIntent: false,
+    },
+    settings: {
+      frequency: 'always',
+    },
+  },
+  {
+    id: 'download-offer',
+    name: 'Download Offer',
+    type: 'banner',
+    content: {
+      title: 'Free E-book Download',
+      description: 'Download our comprehensive guide absolutely free!',
+      buttonText: 'Download Now',
+    },
+    style: {
+      backgroundColor: '#7c3aed',
+      textColor: '#ffffff',
+      buttonColor: '#fbbf24',
+      borderRadius: 0,
+      overlayOpacity: 0,
+    },
+    triggers: {
+      delay: 3,
+      delayEnabled: true,
+      scrollPercent: 20,
+      scrollEnabled: true,
+      exitIntent: false,
+    },
+    settings: {
+      frequency: 'always',
+    },
+  },
+  {
+    id: 'limited-time-offer',
+    name: 'Limited Time Offer',
+    type: 'banner',
+    content: {
+      title: '⚡ Limited Time: 30% Off Everything',
+      description: 'Hurry! This offer expires in 24 hours.',
+      buttonText: 'Claim Now',
+    },
+    style: {
+      backgroundColor: '#f59e0b',
+      textColor: '#1f2937',
+      buttonColor: '#dc2626',
+      borderRadius: 0,
+      overlayOpacity: 0,
+    },
+    triggers: {
+      delay: 4,
+      delayEnabled: true,
+      scrollPercent: 15,
+      scrollEnabled: true,
+      exitIntent: false,
+    },
+    settings: {
+      frequency: 'always',
+    },
+  },
+  // Slide-in Type Templates (2)
+  {
+    id: 'email-capture',
+    name: 'Email Capture',
+    type: 'slide-in',
+    content: {
+      title: 'Join Our Mailing List',
+      description: 'Get exclusive content and special offers.',
+      buttonText: 'Subscribe',
+      inputPlaceholder: 'Your email address',
+    },
+    style: {
+      backgroundColor: '#ffffff',
+      textColor: '#1f2937',
+      buttonColor: '#3b82f6',
+      borderRadius: 8,
+      overlayOpacity: 0.3,
+    },
+    triggers: {
+      delay: 5,
+      delayEnabled: true,
+      scrollPercent: 70,
+      scrollEnabled: true,
+      exitIntent: false,
+    },
+    settings: {
+      frequency: 'always',
+    },
+  },
+  {
+    id: 'survey-request',
+    name: 'Survey Request',
+    type: 'slide-in',
+    content: {
+      title: 'Help Us Improve',
+      description: 'Take a quick 2-minute survey and help us serve you better.',
+      buttonText: 'Take Survey',
+    },
+    style: {
+      backgroundColor: '#f3f4f6',
+      textColor: '#374151',
+      buttonColor: '#6366f1',
+      borderRadius: 12,
+      overlayOpacity: 0.4,
+    },
+    triggers: {
+      delay: 10,
+      delayEnabled: true,
+      scrollPercent: 80,
+      scrollEnabled: true,
+      exitIntent: false,
+    },
+    settings: {
+      frequency: 'always',
+    },
+  },
+  // Floating Type Templates (2)
+  {
+    id: 'feedback-request',
+    name: 'Feedback Request',
+    type: 'floating',
+    content: {
+      title: 'How was your experience?',
+      description: "We'd love to hear your feedback!",
+      buttonText: 'Leave Feedback',
+    },
+    style: {
+      backgroundColor: '#ffffff',
+      textColor: '#1f2937',
+      buttonColor: '#10b981',
+      borderRadius: 24,
+      overlayOpacity: 0,
+    },
+    triggers: {
+      delay: 15,
+      delayEnabled: true,
+      scrollPercent: 50,
+      scrollEnabled: true,
+      exitIntent: false,
+    },
+    settings: {
+      frequency: 'always',
+    },
+  },
+  {
+    id: 'video-popup',
+    name: 'Video Popup',
+    type: 'floating',
+    content: {
+      title: 'Watch Our Demo',
+      description: 'See how our product works in this quick video.',
+      buttonText: 'Watch Video',
+      imageUrl: 'https://via.placeholder.com/200x150?text=Video+Thumbnail',
+    },
+    style: {
+      backgroundColor: '#1f2937',
+      textColor: '#f9fafb',
+      buttonColor: '#ef4444',
+      borderRadius: 16,
+      overlayOpacity: 0,
+    },
+    triggers: {
+      delay: 7,
+      delayEnabled: true,
+      scrollPercent: 35,
+      scrollEnabled: true,
+      exitIntent: false,
+    },
+    settings: {
+      frequency: 'always',
+    },
+  },
+];
