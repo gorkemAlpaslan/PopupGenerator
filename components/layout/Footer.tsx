@@ -27,7 +27,7 @@ export function Footer() {
             <h3 className="text-lg font-semibold tracking-tight">Connect</h3>
             <div className="flex flex-col space-y-3">
               <a
-                href="https://gorkemalpaslan.com"
+                href="https://www.gorkemalpaslan.com.tr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors w-fit"
